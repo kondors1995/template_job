@@ -21,10 +21,15 @@ function repo_sync() {
     repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 }
 
+function cloning_local_manifest() {
+    cp -rf ./local_manifests/* $rom_dir/.repo/local_manifests/
+}
+
 
 if [ -d ".repo" ]; then
     echo "Repo already exists..."
     echo "Try to re sync now..."
+    cloning_local_manifest
     repo_sync
     if [ $? -eq 0 ]; then
             echo "Repo re-sync successfully."
@@ -35,6 +40,7 @@ if [ -d ".repo" ]; then
     fi
 else
     repo_init
+    cloning_local_manifest
     repo_sync
     if [ $? -eq 0 ]; then
             echo "Repo sync successfully."

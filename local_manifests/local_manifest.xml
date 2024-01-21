@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+	<remote name="ergdev"
+		fetch="https://github.com/ergdevops" />
+	<remote name="soviet"
+         	fetch="https://github.com/SOVIET-ANDROID" />
+	<remote name="yapp-github"
+		fetch="https://github.com/yaap" />
+    <remote name="yapp-gitlab"
+        fetch="https://gitlab.com/yaosp" />
+ 
+ 	<project path="device/xiaomi/raphael" name="device_xiaomi_raphael-derpfest" remote="ergdev" revision="testing"/>
+	<project path="kernel/xiaomi/raphael" name="kernel_xiaomi_raphael" remote="soviet" revision="14.0-DPS" />
+	<project path="vendor/xiaomi/raphael" name="vendor_xiaomi_raphael-derpfest" remote="ergdev" revision="fourteen"/>
+
+</manifest>
