@@ -1,19 +1,16 @@
 #!/bin/bash
 
-if [ "$#" -lt 2 ]; then
-    echo "Need params: $0 <parametr1> <parametr2>"
-    exit 1
-fi
+source "../env.bash"
 
-repo_url = "$1"
-repo_branch = "$2"
+repo_url = $REPO_URL
+repo_branch = $REPO_BRANCH
 echo "Syncing rem sources..."
-rom_name = "derp"
-current_directory="$(pwd)"
+rom_name = $ROM_LAUNCH_PREFIX
+current_directory = "$(pwd)"
 mkdir -p "${current_directory}/${rom_name}"
 rom_dir = "${current_directory}/${rom_name}"
 cd rom_dir    
-if [ -d "$repo_directory/.git" ]; then
+if [ -d "./.repo" ]; then
     echo "Repo already exists..."
     echo "Try to re sync now..."
     repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
