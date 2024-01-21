@@ -8,7 +8,7 @@ echo "Syncing rem sources..."
 rom_name=$ROM_LAUNCH_PREFIX
 current_directory="$(pwd)"
 mkdir -p "${current_directory}/${rom_name}"
-rom_dir = "${current_directory}/${rom_name}"
+rom_dir="${current_directory}/${rom_name}"
 cd rom_dir    
 if [ -d "./.repo" ]; then
     echo "Repo already exists..."
