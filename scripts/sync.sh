@@ -35,7 +35,7 @@ if [ -d ".repo" ]; then
     fi
 else
     repo_init
-    #repo_sync
+    repo_sync
     if [ $? -eq 0 ]; then
             echo "Repo sync successfully."
             exit 0
