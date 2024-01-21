@@ -30,8 +30,8 @@ check_git_repo() {
 function check_free_space() {
     current_directory="$(pwd)"
     limit_gb=500
-    available_space_gb=$(df -BG "$directory_path" | awk 'NR==2 {print $4}' | sed 's/G//')
-    if [ "$available_space_gb" -gt "$limit_gb" ]; then
+    available_space_gb=$(df -BG "$current_directory" | awk 'NR==2 {print $4}' | sed 's/G//')
+    if (( $(echo "$available_space_gb > $limit_gb" | bc -l) )); then
         echo "There is more than $limit_gb GB of available space ($available_space_gb GB)."
         exit 0  # Exit status 0 - success
     else
@@ -47,5 +47,5 @@ check_git_repo
 check_free_space
 
 # config git becouse is needed
-git config --global user.name "customrom"
-git config --global user.email "customrom@customrom.com"
+git config --local user.name "customrom"
+git config --local user.email "customrom@customrom.com"
