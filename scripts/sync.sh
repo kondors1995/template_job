@@ -22,14 +22,16 @@ function repo_sync() {
 }
 
 function cloning_local_manifest() {
-    cp -rf ./local_manifests/* $rom_dir/.repo/local_manifests/
+    #todo check existes of directory
+    mkdir -p $rom_dir/.repo/local_manifests
+    cp -rf ../local_manifests/* $rom_dir/.repo/local_manifests/
 }
 
 
 if [ -d ".repo" ]; then
     echo "Repo already exists..."
     echo "Try to re sync now..."
-    cloning_local_manifest
+    cloning_lorom_dir
     repo_sync
     if [ $? -eq 0 ]; then
             echo "Repo re-sync successfully."
