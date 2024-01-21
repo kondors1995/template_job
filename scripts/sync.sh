@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "../env.bash"
+source "./env.sh"
 
 repo_url = $REPO_URL
 repo_branch = $REPO_BRANCH
