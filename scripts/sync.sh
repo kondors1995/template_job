@@ -1,12 +1,12 @@
 #!/bin/bash
 
-source "./env.sh"
+source ./scripts/env.sh
 
-repo_url = $REPO_URL
-repo_branch = $REPO_BRANCH
+repo_url=$REPO_URL
+repo_branch=$REPO_BRANCH
 echo "Syncing rem sources..."
-rom_name = $ROM_LAUNCH_PREFIX
-current_directory = "$(pwd)"
+rom_name=$ROM_LAUNCH_PREFIX
+current_directory="$(pwd)"
 mkdir -p "${current_directory}/${rom_name}"
 rom_dir = "${current_directory}/${rom_name}"
 cd rom_dir    
