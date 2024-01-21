@@ -31,7 +31,7 @@ function cloning_local_manifest() {
 if [ -d ".repo" ]; then
     echo "Repo already exists..."
     echo "Try to re sync now..."
-    cloning_lorom_dir
+    cloning_local_manifest
     repo_sync
     if [ $? -eq 0 ]; then
             echo "Repo re-sync successfully."

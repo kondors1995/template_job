@@ -13,5 +13,8 @@
  	<project path="device/xiaomi/raphael" name="device_xiaomi_raphael-derpfest" remote="ergdev" revision="testing"/>
 	<project path="kernel/xiaomi/raphael" name="kernel_xiaomi_raphael" remote="soviet" revision="14.0-DSP" />
 	<project path="vendor/xiaomi/raphael" name="vendor_xiaomi_raphael-derpfest" remote="ergdev" revision="fourteen"/>
+    <project path="vendor/qcom/common" name="vendor_qcom_common" remote="yapp-gitlab" revision="fourteen"/>
+    <project path="device/qcom/common" name="device" remote="yapp-github" revision="fourteen"/>
+    <project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="soviet" revision="14.0"/>
 
 </manifest>
