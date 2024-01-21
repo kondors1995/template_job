@@ -14,7 +14,10 @@
 	<project path="kernel/xiaomi/raphael" name="kernel_xiaomi_raphael" remote="soviet" revision="14.0-DSP" />
 	<project path="vendor/xiaomi/raphael" name="vendor_xiaomi_raphael-derpfest" remote="ergdev" revision="fourteen"/>
     <project path="vendor/qcom/common" name="vendor_qcom_common" remote="yapp-gitlab" revision="fourteen"/>
-    <project path="device/qcom/common" name="device" remote="yapp-github" revision="fourteen"/>
+    <project path="device/qcom/common" name="device_qcom_common" remote="yapp-github" revision="fourteen"/>
     <project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="soviet" revision="14.0"/>
+
+    <remove-project name"prebuilts_clang_host_linux" />
+    <project path="prebuilts/clang/host/linux-x86" name="prebuilts_clang_host_linux-x86" remote="yaap-gitlab" remote="fourteen"/>
 
 </manifest>
