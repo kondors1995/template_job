@@ -17,7 +17,7 @@
     <project path="device/qcom/common" name="device_qcom_common" remote="yapp-github" revision="fourteen"/>
     <project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="soviet" revision="14.0"/>
 
-    <remove-project name"prebuilts_clang_host_linux" />
+    <remove-project path="prebuilts/clang/host/linux-x86" />
     <project path="prebuilts/clang/host/linux-x86" name="prebuilts_clang_host_linux-x86" remote="yaap-gitlab" remote="fourteen"/>
 
 </manifest>

@@ -13,18 +13,24 @@ echo "Working directory:"
 pwd
 
 function repo_init() {
-    echo "Init repository..."
-    repo init -u "$REPO_URL" -b "$REPO_BRANCH"
+    echo "Init repository... becouse we don't have it"
+    repo init -u "$REPO_URL" -b "$REPO_BRANCH" "$REPO_PARAMS"
 }
 
 function repo_sync() {
+    echo "Repo syncing..."
     repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 }
 
 function cloning_local_manifest() {
-    #todo check existes of directory
-    mkdir -p $rom_dir/.repo/local_manifests
-    cp -rf ../local_manifests/* $rom_dir/.repo/local_manifests/
+#    mkdir -p $rom_dir/.repo/local_manifests
+    if [ -d $rom_dir/.repo/local_manifests ]; then
+        echo "Local manifests repo exists try to sync"
+        git pull
+    else
+        echo "Creating local manifests repo and cloning"
+        git clone "$LOCAL_MANIFEST_URL" -b "$LOCAL_MANIFEST_BRANCH" $rom_dir/.repo/local_manifests
+    fi
 }
 
 

@@ -1,9 +1,11 @@
 #!/bin/bash
 
+source ./scripts/env.sh
+
 current_directory="$(pwd)"
 repo_directory="$(pwd)"
-repo_url="https://repo1.small.pl/git/pub/axiom/template"
-branch="dev"
+repo_url=$TEMPLATE_URL
+branch=$TEMPLATE_BRANCH
 
 #check if git temp repo exists
 check_git_repo() {
@@ -29,7 +31,7 @@ check_git_repo() {
 # Check if we have more than 500 GB free space 
 function check_free_space() {
     current_directory="$(pwd)"
-    limit_gb=400
+    limit_gb=100
     available_space_gb=$(df -BG "$current_directory" | awk 'NR==2 {print $4}' | sed 's/G//')
     if (( $(echo "$available_space_gb > $limit_gb" | bc -l) )); then
         echo "There is more than $limit_gb GB of available space ($available_space_gb GB)."

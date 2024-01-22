@@ -12,10 +12,11 @@ echo "Working directory:"
 pwd
 
 export USE_CCACHE=1
-#export CCACHE_EXEC=/usr/bin/ccache
-#export CCACHE_DIR=~/tmp_ccache
-ccache -M 70G
 
 source build/envsetup.sh
+
+export CCACHE_DIR=/var/lib/jenkins/TMPCCACHE
+ccache -M 200G
+
 lunch "$ROM_LAUNCH_PREFIX"_"$DEVICE_NAME"-"$BUILD_TYPE"
 mka bacon
