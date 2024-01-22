@@ -16,7 +16,7 @@ pwd
 
 function repo_init() {
     echo "Init repository... becouse we don't have it"
-    bash -c 'repo init -u "$REPO_URL" -b "$REPO_BRANCH" "$REPO_PARAMS"'
+    repo init -u "$REPO_URL" -b "$REPO_BRANCH" "$REPO_PARAMS"
 }
 
 function repo_sync() {
