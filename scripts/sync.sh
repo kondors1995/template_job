@@ -35,7 +35,7 @@ function cloning_local_manifest() {
 
 function run_other_script() {
     echo "Runing other user script..."
-    ./scripts/other.sh
+    bash ../scripts/other.sh
 }
 
 if [ -d ".repo" ]; then
