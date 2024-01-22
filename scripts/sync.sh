@@ -5,6 +5,8 @@ source ./scripts/env.sh
 
 echo "Syncing rom sources..."
 rom_name=$ROM_LAUNCH_PREFIX
+repo_url=$REPO_URL
+repo_branch=$REPO_BRANCH
 current_directory="$(pwd)"
 rom_dir="$current_directory/$rom_name"
 mkdir -p $rom_dir
@@ -14,7 +16,7 @@ pwd
 
 function repo_init() {
     echo "Init repository... becouse we don't have it"
-    repo init -u "$REPO_URL" -b "$REPO_BRANCH" "$REPO_PARAMS"
+    bash -c 'repo init -u "$REPO_URL" -b "$REPO_BRANCH" "$REPO_PARAMS"'
 }
 
 function repo_sync() {
