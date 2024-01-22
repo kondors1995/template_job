@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-source ../scripts/env.sh
+source ./scripts/env.sh
 
 
 echo "Syncing rom sources..."

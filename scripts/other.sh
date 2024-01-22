@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./scripts/env.sh
+source ../scripts/env.sh
 
 # this is a place for your adictional steps
 echo "Working directory..."
