@@ -33,12 +33,17 @@ function cloning_local_manifest() {
     fi
 }
 
+function run_other_script() {
+    echo "Runing other user script..."
+    ./scripts/other.sh
+}
 
 if [ -d ".repo" ]; then
     echo "Repo already exists..."
     echo "Try to re sync now..."
     cloning_local_manifest
     repo_sync
+    run_other_script
     if [ $? -eq 0 ]; then
             echo "Repo re-sync successfully."
             exit 0
@@ -50,6 +55,7 @@ else
     repo_init
     cloning_local_manifest
     repo_sync
+    run_other_script
     if [ $? -eq 0 ]; then
             echo "Repo sync successfully."
             exit 0
